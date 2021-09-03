@@ -1,0 +1,570 @@
+/*  import google fonts */
+
+@font-face {
+    font-family: valorant;
+    src: url(../fonts/valorant.ttf);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: menufont;
+    src: url(../fonts/Kanit-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+
+section {
+    padding: 100px 0;
+}
+
+.max-width {
+    max-width: 1600px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.about .about-content, .services .serv-content, .skills .skills-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: poppins;
+}
+
+section .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+section .title::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: #ff4655;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: menufont;
+    transition: all 0.3s ease;
+    background-color: #111;
+}
+
+.navbar.sticky {
+    padding: 15px 0;
+    background: #ff4655;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 35px;
+}
+
+.navbar .logo a {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 600;
+    font-family: poppins;
+}
+
+.navbar .logo a span {
+    color: #ff4655;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky .logo a span {
+    color: #111;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+    font-family: menufont;
+}
+
+.navbar .menu li a:hover {
+    color: #ff4655;
+}
+
+.navbar .menu li a:focus {
+    color: #ff4655;
+}
+
+.navbar.sticky .menu li a:hover {
+    color: #111;
+}
+
+/* menu btn styling */
+
+.menu-btn {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+.scroll-up-btn {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #ff4655;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-up-btn:hover {
+    filter: brightness(90%);
+}
+
+/* home section styling */
+
+.home {
+    display: flex;
+    background-color: #ece8e1;
+    height: 100vh;
+    color: #111111;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: poppins;
+}
+
+.home .max-width {
+    margin: auto 0 auto 30px;
+}
+
+.home .home-content .text-1 {
+    font-size: 27px;
+}
+
+.home .home-content .text-2 {
+    font-size: 100px;
+    margin-left: -3px;
+    margin-bottom: -1rem;
+    font-family: valorant;
+}
+
+.home .home-content .text-2 span {
+    color: #ff4655;
+}
+
+.home .home-content .text-3 {
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+    color: #111111;
+    font-family: valorant;
+    font-size: 50px;
+}
+
+.home .home-content a {
+    display: inline-block;
+    background: #ff4655;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid #ff4655;
+    transition: all 0.3s ease;
+}
+
+.home .home-content a:hover {
+    color: #ff4655;
+    background: none;
+}
+
+/* about section styling */
+
+.about .title {
+    font-family: valorant;
+    font-size: 35px;
+}
+
+.about .title::after {
+    font-family: poppins;
+    font-size: 17px;
+    content: "Who am I ?";
+}
+
+.about .about-content .left {
+    width: 45%;
+}
+
+.about .about-content .left img {
+    height: 400px;
+    width: 400px;
+    object-fit: scale-down;
+    border-radius: 6px;
+}
+
+.about .about-content .right {
+    width: 55%;
+}
+
+.about .about-content .right p {
+    font-family: poppins;
+    margin: 30px 0 0 -60px;
+}
+
+.about .about-content .right .paragraph {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.about .about-content .right .paragraph ul {
+    font-size: 15px;
+}
+
+.about .about-content .right .text {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: poppins;
+    margin-bottom: 10px;
+}
+
+.about .about-content .right .text span {
+    font-family: valorant;
+    color: #ff4655;
+}
+
+.about .about-content .right p {
+    text-align: justify;
+}
+
+.about .about-content .right a {
+    display: inline-block;
+    background: #ff4655;
+    color: #fff;
+    font-size: 15px;
+    font-family: poppins;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #ff4655;
+    transition: all 0.3s ease;
+}
+
+.about .about-content .right a:hover {
+    color: #ff4655;
+    background: none;
+}
+
+/* services section styling */
+
+.services {
+    color: #fff;
+    background: #111;
+}
+
+.services .title {
+    font-family: valorant;
+    font-size: 35px;
+}
+
+.services .title::before {
+    background: #fff;
+}
+
+.services .title::after {
+    background: #111;
+    content: "What I provide";
+    font-family: poppins;
+    font-size: 17px;
+}
+
+.services .serv-content .card {
+    width: calc(33% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 25px 25px 70px 25px;
+    cursor: pointer;
+    height: max-content;
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover {
+    background: #ff4655;
+}
+
+.services .serv-content .card .box {
+    transition: all 0.3s ease;
+    font-family: poppins;
+    text-align: center;
+}
+
+.services .serv-content .card .box p {
+    text-align: justify;
+}
+
+.services .serv-content .card:hover .box {
+    transform: scale(1.05);
+}
+
+.services .serv-content .card i {
+    font-size: 40px;
+    color: #ff4655;
+    transition: color 0.3s ease;
+}
+
+.services .serv-content .card:hover i {
+    color: #fff;
+}
+
+.services .serv-content .card .text {
+    font-size: 25px;
+    font-family: menufont;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+/* skills section styling */
+
+.skills {
+    background-color: #ece8e1;
+}
+
+.skills .title::after {
+    content: "What I know !";
+    background-color: #ece8e1;
+    font-family: poppins;
+    font-size: 17px;
+}
+
+.skills .title {
+    font-family: valorant;
+    font-size: 35px;
+}
+
+.skills .skills-content .column {
+    width: calc(50% - 30px);
+}
+
+.skills .skills-content .left .text {
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: menufont;
+    color: #ff4655;
+}
+
+.skills .skills-content .left .text span:hover {
+    font-size: 70px;
+}
+
+.skills .skills-content .left p {
+    text-align: justify;
+    font-family: poppins;
+    font-size: 16px;
+}
+
+.skills .skills-content .left a {
+    display: inline-block;
+    background: #ff4655;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #ff4655;
+    transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover {
+    color: #ff4655;
+    background: none;
+}
+
+.skills .skills-content .right .bars {
+    margin-bottom: 15px;
+}
+
+.skills .skills-content .right .info {
+    display: flex;
+    margin-bottom: 5px;
+    font-family: menufont;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills .skills-content .right span {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.skills .skills-content .right .line {
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+
+.skills .skills-content .right .line::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #ff4655;
+}
+
+.skills-content .right .html::before {
+    width: 90%;
+}
+
+.skills-content .right .css::before {
+    width: 80%;
+}
+
+.skills-content .right .js::before {
+    width: 75%;
+}
+
+.skills-content .right .react::before {
+    width: 65%;
+}
+
+.skills-content .right .node::before {
+    width: 60%;
+}
+
+/* footer section styling */
+
+footer {
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+
+footer span a {
+    color: #ff4655;
+    text-decoration: none;
+}
+
+footer.footer-area {
+    background-color: #111111;
+}
+
+footer.footer-area .social h5 {
+    font-family: menufont;
+    letter-spacing: 1px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+footer.footer-area .social a>i {
+    font-size: 2.2rem;
+    padding: 2rem;
+    color: #ffffff;
+}
+
+.footer-area .para {
+    font-family: poppins;
+}
+
+.footer-area .para a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-area .para a:hover {
+    color: #ff4655;
+    font-size: larger;
+    text-decoration: none;
+}
+
+footer.footer-area .social a>i:hover {
+    color: #ff4655;
+}
